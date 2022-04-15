@@ -12,3 +12,4 @@ cat <<EOF > index.html
 </html>
 EOF
 echo "--------------- Build Finished -----------------"
+
