@@ -1,4 +1,5 @@
 echo "--------------- Build Started ------------------"
+
 cat <<EOF > index.html
 <html>
 <body bgcolor=black>
@@ -11,5 +12,5 @@ cat <<EOF > index.html
 </body>
 </html>
 EOF
-echo "--------------- Build Finished -----------------"
 
+echo "--------------- Build Finished -----------------"
