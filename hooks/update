@@ -1,5 +1,4 @@
 #!/bin/sh
 echo "XXX from update file"
 curl -u admin:11f778f9f2c4d1e237d60f479974e3dae9 -X POST http://localhost:8080/job/Task1_pullsrc_buildcontainer/build?token=11f778f9f2c4d1e237d60f479974e3dae9
-
 exit 0
