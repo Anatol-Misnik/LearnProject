@@ -1,2 +1,3 @@
 logfiles/*
+echo $BUILD_ID
 
