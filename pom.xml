@@ -16,16 +16,7 @@ src/main/java/com/test/Project.java
     </repository>
   </repositories>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://localhost:8081/repository/maven-snapshots/</url>
-    </snapshotRepository>
-    <repository>
-      <id>nexus-releases</id>
-      <url>http://localhost:8081/repository/maven-releases/</url>
-    </repository>
-  </distributionManagement>
+ 
 	
   <groupId>srv.jenkins</groupId>
   <artifactId>projectformvn</artifactId>
