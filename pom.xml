@@ -13,7 +13,7 @@ src/main/java/com/test/Project.java
   <distributionManagement>
     <snapshotRepository>
       <id>maven-proxy-task</id>
-      <url>http://localhost:8081/repository/maven-proxy-task/</url>
+      <url>http://172.18.168.238:8081/repository/maven-proxy-task/</url>
     </snapshotRepository>
   </distributionManagement>
 	
