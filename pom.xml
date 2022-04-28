@@ -27,7 +27,7 @@ src/main/java/com/test/Project.java
     </repository>
   </distributionManagement>
 	
-  <groupId>srv.jenfins</groupId>
+  <groupId>srv.jenkins</groupId>
   <artifactId>projectformvn</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
