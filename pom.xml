@@ -12,18 +12,18 @@ src/main/java/com/test/Project.java
   <repositories>
     <repository>
       <id>maven-group</id>
-      <url>http://nexus/repository/maven-group/</url>
+      <url>http://localhost:8081/repository/maven-group/</url>
     </repository>
   </repositories>
 
   <distributionManagement>
     <snapshotRepository>
       <id>nexus-snapshots</id>
-      <url>http://nexus/repository/maven-snapshots/</url>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
     <repository>
       <id>nexus-releases</id>
-      <url>http://nexus/repository/maven-releases/</url>
+      <url>http://localhost:8081/repository/maven-releases/</url>
     </repository>
   </distributionManagement>
 	
@@ -62,7 +62,7 @@ src/main/java/com/test/Project.java
 			<extensions>true</extensions>
 			<configuration>
 			    <serverId>nexus</serverId>
-			    <nexusUrl>http://nexus/</nexusUrl>
+			    <nexusUrl>http://localhost:8081/</nexusUrl>
 			</configuration>
 		      </plugin>
 		   </plugins>
