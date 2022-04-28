@@ -13,7 +13,7 @@ src/main/java/com/test/Project.java
 
   <distributionManagement>
     <snapshotRepository>
-      <id>nexus-group</id>
+      <id>nexus-snapshots</id>
       <url>http://localhost:8081/repository/maven-proxy-task/</url>
     </snapshotRepository>
   </distributionManagement>
@@ -32,8 +32,7 @@ src/main/java/com/test/Project.java
                             <version>4.11</version>
                             <scope>test</scope>
                         </dependency>
-                       
-			<dependency>
+                      	<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-collections4</artifactId>
 				<version>4.0</version>
@@ -48,16 +47,17 @@ src/main/java/com/test/Project.java
 		  <build>
 		    <plugins>
 		      <plugin>
+			<!-- https://mvnrepository.com/artifact/org.sonatype.plugins/nexus-staging-maven-plugin -->
 			<groupId>org.sonatype.plugins</groupId>
 			<artifactId>nexus-staging-maven-plugin</artifactId>
-			<version>1.6.3</version>
+			<version>1.6.8</version>
 			<extensions>true</extensions>
 			<configuration>
 			    <serverId>localnexus3</serverId>
 			    <nexusUrl>http://localhost:8081/</nexusUrl>
 			</configuration>
 		      </plugin>
-		   </plugins>
+		  </plugins>
 		</build>
 </project>
 
