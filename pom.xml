@@ -12,10 +12,10 @@ src/main/java/com/test/Project.java
 	
 
   <distributionManagement>
-    <Proxyrepository>
+    <snapshotRepository>
       <id>nexus-group</id>
       <url>http://localhost:8081/repository/maven-proxy-task/</url>
-    </Proxyrepository>
+    </snapshotRepository>
   </distributionManagement>
  
 	
