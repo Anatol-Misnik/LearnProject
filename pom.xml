@@ -10,13 +10,18 @@ src/main/resources/project.properties
 src/main/java/com/test/Project.java
 -->
 	
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://localhost:8081/repository/maven-proxy-task/</url>
-    </snapshotRepository>
-  </distributionManagement>
+<distributionManagement>
+<repository>
+<id>nexus</id>
+<name>maven-releases</name>
+<url>http://localhost:8081/repository/maven-releases/</url>
+</repository>
+<snapshotRepository>
+<id>nexus</id>
+<name>maven-snapshots</name>
+<url>http://localhost:8081/repository/maven-proxy-task/</url>
+</snapshotRepository>
+</distributionManagement>	
  
 	
   <groupId>srv.jenkins</groupId>
@@ -107,6 +112,5 @@ src/main/java/com/test/Project.java
 <version>4.10</version>
 </dependency>
 </dependencies>
-	
 	
 </project>
