@@ -4,12 +4,6 @@
                     http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-<!--
-src/test/java/com/test/UnitTest.java
-src/main/resources/project.properties
-src/main/java/com/test/Project.java
--->
-
   <groupId>srv.jenfins</groupId>
   <artifactId>projectformvn</artifactId>
   <version>0.1-SNAPSHOT</version>
