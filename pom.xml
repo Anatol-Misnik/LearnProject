@@ -62,11 +62,11 @@
        	   <plugin>
         	 <groupId>org.sonatype.plugins</groupId>
           	 <artifactId>nexus-staging-maven-plugin</artifactId>
-         	 <version>1.6.8</version>
+         	 <version>1.6.3</version>
         	 <extensions>true</extensions>
          	   <configuration>
             		<serverId>nexus</serverId>
-            		<nexusUrl>http://localhost:8081/</nexusUrl>
+            		<nexusUrl>http://localhost:8081/repository/maven-proxy-test/</nexusUrl>
         	   </configuration>
       	   </plugin>
    </plugins>
