@@ -12,7 +12,6 @@
 </repository>
 <snapshotRepository>
 <id>nexus</id>
-<name>maven-proxy</name>
 <url>http://localhost:8081/repository/maven-proxy-task/</url>
 </snapshotRepository>
 </distributionManagement>	
