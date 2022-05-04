@@ -28,14 +28,14 @@
                                 <artifactId>maven-core</artifactId>
                                 <version>3.0.4</version>
                         </dependency>
-                    </dependencies>
+                  </dependencies>
 
- <build>
-  <plugins>
+  <build>
+   <plugins>
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.8</version>
+        <version>1.6.3</version>
         <extensions>true</extensions>
         <configuration>
             <serverId>nexus</serverId>
@@ -43,5 +43,6 @@
         </configuration>
       </plugin>
    </plugins>
- </build>
+  </build>
+	
 </project>
