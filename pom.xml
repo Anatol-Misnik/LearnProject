@@ -6,7 +6,7 @@
 
   <groupId>srv.jenfins</groupId>
   <artifactId>projectformvn</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1</version>
   <packaging>jar</packaging>
   <name>maven-simple</name>
 	
