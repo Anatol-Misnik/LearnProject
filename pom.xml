@@ -59,11 +59,7 @@
                  <artifactId>maven-pmd-plugin</artifactId>
                  <version>3.2.1</version>
            </plugin>
-           <plugin>
-                 <groupId>org.codehaus.mojo</groupId>
-                 <artifactId>sonar-maven-plugin</artifactId>
-           </plugin>
-     	   <plugin>
+       	   <plugin>
         	 <groupId>org.sonatype.plugins</groupId>
           	 <artifactId>nexus-staging-maven-plugin</artifactId>
          	 <version>1.6.8</version>
@@ -71,7 +67,7 @@
          	   <configuration>
             		<serverId>nexus</serverId>
             		<nexusUrl>http://localhost:8081/</nexusUrl>
-        	    </configuration>
+        	   </configuration>
       	   </plugin>
    </plugins>
   </build>
