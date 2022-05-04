@@ -16,7 +16,7 @@ src/main/java/com/test/Project.java
 <name>maven-releases</name>
 <url>http://localhost:8081/repository/maven-releases/</url>
 </repository>
-<shotRepository>
+<snapshotRepository>
 <id>nexus</id>
 <name>maven-proxy</name>
 <url>http://localhost:8081/repository/maven-proxy-task/</url>
