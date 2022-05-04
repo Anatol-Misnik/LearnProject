@@ -9,7 +9,21 @@
   <version>0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>maven-simple</name>
-
+	
+	
+<distributionManagement>
+  <repository>
+	<id>nexus</id>
+	<name>maven-releases</name>
+	<url>http://localhost:8081/repository/maven-releases/</url>
+  </repository>
+  <snapshotRepository>
+	<id>nexus</id>
+	<name>maven-snapshots</name>
+	<url>http://localhost:8081/repository/maven-snapshots/</url>
+  </snapshotRepository>
+</distributionManagement>
+	
                 <dependencies>
                         <dependency>
                             <groupId>junit</groupId>
