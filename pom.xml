@@ -17,6 +17,12 @@
   </snapshotRepository>
 </distributionManagement>
 	
+  <groupId>srv.jenkins</groupId>
+  <artifactId>projectformvn</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>maven-simple</name>
+	
 <dependencies>
       <dependency>
         <groupId>junit</groupId>
