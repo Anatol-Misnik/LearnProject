@@ -76,11 +76,10 @@
          	 <version>1.6.3</version>
         	 <extensions>true</extensions>
          	   <configuration>
-            		<serverId>nexus</serverId>
+            		<serverId>nexuslocal3</serverId>
             		<nexusUrl>http://localhost:8081/</nexusUrl>
         	   </configuration>
       	  </plugin>
    </plugins>
   </build>
-	
 </project>
