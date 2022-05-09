@@ -796,12 +796,6 @@
         -->
         <animal.sniffer.skip>true</animal.sniffer.skip>
 
-        <!--
-          Spotless requires custom arguments to be added to .mvn/jvm.config when running on Java 17,
-          but we cannot add those custom arguments until we drop support for Java 8. As a temporary
-          workaround, we skip Spotless when running on Java 17. When JENKINS-68015 is resolved, this
-          can be deleted.
-        -->
         <spotless.check.skip>true</spotless.check.skip>
       </properties>
     </profile>
