@@ -163,8 +163,8 @@
           <version>1.6.3</version>
           <extensions>true</extensions>
           <configuration>
-            <serverId>nexus</serverId>
-            <nexusUrl>http://nexus:8081/</nexusUrl>
+            <serverId>nexuslocal3</serverId>
+            <nexusUrl>http://localhost:8081/</nexusUrl>
           </configuration>
         </plugin>
         <plugin>
