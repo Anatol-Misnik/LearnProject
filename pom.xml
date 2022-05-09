@@ -13,56 +13,55 @@
 	
 <distributionManagement>
   <repository>
-	<id>nexus</id>
+	<id>nexuslocal3</id>
 	<name>maven-releases</name>
 	<url>http://localhost:8081/repository/maven-releases/</url>
   </repository>
   <snapshotRepository>
-	<id>nexus</id>
+	<id>nexuslocal3</id>
 	<name>maven-snapshots</name>
 	<url>http://localhost:8081/repository/maven-snapshots/</url>
   </snapshotRepository>
 </distributionManagement>
 	
-                <dependencies>
-                        <dependency>
-                            <groupId>junit</groupId>
-                            <artifactId>junit</artifactId>
-                            <version>4.11</version>
-                            <scope>test</scope>
-                        </dependency>
-                       
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-collections4</artifactId>
-				<version>4.0</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.maven</groupId>
-                                <artifactId>maven-core</artifactId>
-                                <version>3.0.4</version>
-                        </dependency>
-                  </dependencies>
+<dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-collections4</artifactId>
+   	<version>4.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-core</artifactId>
+        <version>3.0.4</version>
+      </dependency>
+</dependencies>
 
   <build>
    <plugins>
 	 <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-           <configuration>
-            <fork>true</fork>
-            <compilerReuseStrategy>alwaysNew</compilerReuseStrategy>
-            <compilerArgs>
-            <compilerArg>-Xpkginfo:always</compilerArg>
-            </compilerArgs>
-           </configuration>
+              <groupId>org.apache.maven.plugins</groupId>
+         	<artifactId>maven-compiler-plugin</artifactId>
+          	 <configuration>
+          	  <fork>true</fork>
+           	  <compilerReuseStrategy>alwaysNew</compilerReuseStrategy>
+           	  <compilerArgs>
+           	    <compilerArg>-Xpkginfo:always</compilerArg>
+            	  </compilerArgs>
+           	 </configuration>
           </plugin>
 	  <plugin>
-      		<groupId>org.apache.maven.plugins</groupId>
+      	        <groupId>org.apache.maven.plugins</groupId>
       		<artifactId>maven-jar-plugin</artifactId>
       		<version>2.3.1</version>
       		<configuration>
-        	<outputDirectory>http://localhost:8081/artifact</outputDirectory>
+        	 <outputDirectory>http://localhost:8081/artifact</outputDirectory>
       		</configuration>
 	  </plugin>
           <plugin>
@@ -76,8 +75,8 @@
          	 <version>1.6.3</version>
         	 <extensions>true</extensions>
          	   <configuration>
-            		<serverId>nexuslocal3</serverId>
-            		<nexusUrl>http://localhost:8081/</nexusUrl>
+            	    <serverId>nexuslocal3</serverId>
+            	    <nexusUrl>http://localhost:8081/</nexusUrl>
         	   </configuration>
       	  </plugin>
    </plugins>
