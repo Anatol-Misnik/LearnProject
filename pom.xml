@@ -198,11 +198,7 @@
             <keystore>${hudson.sign.keystore}</keystore>
           </configuration>
         </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <!-- Version specified in parent POM -->
-        </plugin>
+        
         <plugin>
           <!--
             Both test harness and core uses stapler as an extension,
