@@ -1,0 +1,20 @@
+name: trigger_for_qa-storefront-test
+on:
+  pull_request:
+    branches: 
+      - main
+  push:
+    branches:
+      - main
+      - qa-feature-test-hook
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        run: |
+          curl -X POST https://api.github.com/repos/awst-global/qa-feature-tests/dispatches \
+           -H "Accept: application/vnd.github+json" \
+           -u ${{ secrets.ACTIONS_TESTS_KEY }} \
+           -d '{"event_type":"on-demand-FE-test","client_payload":{"unit":false,"integration":true}}'
