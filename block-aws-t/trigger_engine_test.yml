@@ -1,0 +1,34 @@
+name: trigger_qa-engine-test
+on:
+  pull_request:
+    branches: 
+      - v1
+  push:
+    branches:
+      - v1
+      - temp-test-automation
+  workflow_dispatch:
+    inputs: 
+      name:
+        type: choice
+        description: Who to greet
+        options: 
+        - monalisa
+        - cschleiden
+      message:
+        required: true
+      use-emoji:
+        type: boolean
+        description: Include  emojis
+      environment:
+        type: environment
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Dispatch
+        run: |
+          curl -X POST https://api.github.com/repos/awst-global/qa-feature-tests/dispatches \
+           -H "Accept: application/vnd.github+json" \
+           -u ${{ secrets.ACTIONS_TESTS_KEY }} \
+           -d '{"event_type":"on-demand-test","client_payload":{"unit":false,"integration":true}}'
