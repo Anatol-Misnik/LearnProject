@@ -1,0 +1,61 @@
+#------------------------------------------
+# GitHub Actions automation QA-Basics
+# Storefront v1.2
+# Devopsity (R)                  2022
+#------------------------------------------
+
+name: storefront-test
+
+on:
+  repository_dispatch:
+  
+jobs:
+  automation-test:
+    name: Run_FE_auto_tests
+    if: github.event.action == 'on-demand-FE-test'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use actions/checkout
+        uses: actions/checkout@v2
+
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.19.x'
+         
+      - name: Setup Godog
+        run:
+          go install github.com/cucumber/godog/cmd/godog@latest
+          
+      - name: Copy env
+        run: 
+          cp .env.dist .env
+           
+      - name: Connect to private repo
+        run: 
+          git config --global url.https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/.insteadOf https://github.com/
+
+      - name: Set env & Run godog test
+        timeout-minutes: 25
+        env: 
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          AUTH0_BASE_EMAIL: ${{ secrets.AUTH0_BASE_EMAIL }}
+          AUTH0_BASE_EMAIL_EXISTING: ${{ secrets.AUTH0_BASE_EMAIL_EXISTING }}
+          AUTH0_CLIENT: ${{ secrets.AUTH0_CLIENT }}
+          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
+          AUTH0_DOMAIN_FE: "login.be-staging.develop.awst.io"
+          AUTH0_PASSWORD: ${{ secrets.AUTH0_PASSWORD }}
+          AUTH0_PASSWORD_EXISTING: ${{ secrets.AUTH0_PASSWORD_EXISTING }}
+          ECDSA_SIGNING_KEY: ${{ secrets.ECDSA_SIGNING_KEY }}
+          GODOG_MODE: "STOREFRONT_MODE"
+          GOPRIVATE: "github.com/awst-global"
+          LIST_OF_TAGS: "@failure,@notFound"
+          STOREFRONT_CLIENT: "storefront"
+          STOREFRONT_ENDPOINT: "https://storefront.be-staging.develop.awst.io/"
+          STRIPE_2FA_GSM: ${{ secrets.STRIPE_2FA_GSM }}
+          UTILITY_CODE_LIMITED_REDEMTION: ${{ secrets.UTILITY_CODE_LIMITED_REDEMTION }}
+          UTILITY_CODE_UNLIMITED_REDEMTION: ${{ secrets.UTILITY_CODE_UNLIMITED_REDEMTION }}
+          UTILITY_KEY: ${{ secrets.UTILITY_KEY }}
+        run:
+          godog run features/${{ env.STOREFRONT_CLIENT }} -t @CI/CD
