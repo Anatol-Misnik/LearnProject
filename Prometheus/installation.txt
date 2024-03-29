@@ -2,9 +2,10 @@ install/
 https://github.com/Einsteinish/Docker-Compose-Prometheus-and-Grafana?tab=readme-ov-file
 
 SELinux/
-#sestatus
-#vim /etc/sysconfig/selinux
-#semanage port -a -t http_port_t -p tcp 9093
+# sestatus
+# vim /etc/sysconfig/selinux
+# semanage port -a -t http_port_t -p tcp 9093
+# ausearch -m AVC,USER_AVC -ts recent
 https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/
 https://serverfault.com/questions/448859/centos-semanage-delete-range-of-ports
 https://blog.kubesimplify.com/installing-prometheus-with-selinux
@@ -16,3 +17,4 @@ https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html
 metrics/
 https://prometheus.io/docs/instrumenting/exporters/
 https://github.com/iamseth/oracledb_exporter
+https://hub.docker.com/search?q=oracle-exporter
