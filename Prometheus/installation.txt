@@ -2,10 +2,14 @@ https://github.com/Einsteinish/Docker-Compose-Prometheus-and-Grafana?tab=readme-
 
 
 SELinux/
+#sestatus
+#vim /etc/sysconfig/selinux
+#semanage port -a -t http_port_t -p tcp 9093
 https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/
 https://serverfault.com/questions/448859/centos-semanage-delete-range-of-ports
 
 tcpdump/
+tcpdump -i ens34 -s 65535 -w ens34-2.pcap
 https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html
 
 metrics/
