@@ -1,5 +1,5 @@
+install/
 https://github.com/Einsteinish/Docker-Compose-Prometheus-and-Grafana?tab=readme-ov-file
-
 
 SELinux/
 #sestatus
@@ -7,6 +7,7 @@ SELinux/
 #semanage port -a -t http_port_t -p tcp 9093
 https://www.tecmint.com/disable-selinux-in-centos-rhel-fedora/
 https://serverfault.com/questions/448859/centos-semanage-delete-range-of-ports
+https://blog.kubesimplify.com/installing-prometheus-with-selinux
 
 tcpdump/
 tcpdump -i ens34 -s 65535 -w ens34-2.pcap
