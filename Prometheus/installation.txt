@@ -15,3 +15,4 @@ https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html
 
 metrics/
 https://prometheus.io/docs/instrumenting/exporters/
+https://github.com/iamseth/oracledb_exporter
