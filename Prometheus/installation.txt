@@ -18,3 +18,6 @@ metrics/
 https://prometheus.io/docs/instrumenting/exporters/
 https://github.com/iamseth/oracledb_exporter
 https://hub.docker.com/search?q=oracle-exporter
+
+k8s+Helm_case/
+https://www.youtube.com/watch?v=-ykwb1d0DXU&t
