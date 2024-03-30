@@ -21,3 +21,9 @@ https://hub.docker.com/search?q=oracle-exporter
 
 k8s+Helm_case/
 https://www.youtube.com/watch?v=-ykwb1d0DXU&t
+
+install k8s on CentOS 8/
+1. disable swap:
+# swapoff -a
+check by # cat /etc/fstab
+2. install Docker 
