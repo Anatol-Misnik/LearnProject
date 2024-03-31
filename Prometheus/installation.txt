@@ -23,7 +23,9 @@ k8s+Helm_case/
 https://www.youtube.com/watch?v=-ykwb1d0DXU&t
 
 install k8s on CentOS 8/
+https://www.youtube.com/watch?v=_WW16Sp8-Jw
+
 1. disable swap:
 # swapoff -a
 check by # cat /etc/fstab
-2. install Docker 
+2. install Docker (using kubeadmin we can save the priviously installed)
