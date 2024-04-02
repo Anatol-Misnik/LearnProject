@@ -24,8 +24,29 @@ https://www.youtube.com/watch?v=-ykwb1d0DXU&t
 
 install k8s on CentOS 8/
 https://www.youtube.com/watch?v=_WW16Sp8-Jw
-
 1. disable swap:
 # swapoff -a
 check by # cat /etc/fstab
 2. install Docker (using kubeadmin we can save the priviously installed)
+
+
+install Minikube:
+https://minikube.sigs.k8s.io/docs/start/
+1. 
+# curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+# sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+
+2.From a terminal with administrator access (but not logged in as root), run:
+# minikube start
+(https://docs.docker.com/engine/install/linux-postinstall/)
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
+$ newgrp docker
+$ docker run hello-world
+
+3.Interact with your cluster
+# minikube kubectl -- get po -A
+# alias kubectl="minikube kubectl --"
+# minikube dashboard
+# minikube addons enable metrics-server
+
