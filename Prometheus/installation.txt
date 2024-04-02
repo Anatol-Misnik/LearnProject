@@ -71,5 +71,12 @@ mv linux-amd64/helm /usr/local/bin/helm
 cd /usr/local/bin/
 [a.misnik@testing-env-1 bin]$ helm version
 version.BuildInfo{Version:"v3.14.3", GitCommit:"f03cc04caaa8f6d7c3e67cf918929150cf6f3f12", GitTreeState:"clean", GoVersion:"go1.21.7"}
+$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+"prometheus-community" has been added to your repositories
+$ helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "prometheus-community" chart repository
+Update Complete. ⎈Happy Helming!⎈
+
 
 
