@@ -63,3 +63,13 @@ kubelet: Running
 apiserver: Running
 kubeconfig: Configured
 
+Helm Install/
+(https://helm.sh/docs/intro/install/)
+curl -fsSL -o get_helm.sh https://get.helm.sh/helm-v3.14.3-linux-amd64.tar.gz
+tar -zxvf get_helm.sh
+mv linux-amd64/helm /usr/local/bin/helm
+cd /usr/local/bin/
+[a.misnik@testing-env-1 bin]$ helm version
+version.BuildInfo{Version:"v3.14.3", GitCommit:"f03cc04caaa8f6d7c3e67cf918929150cf6f3f12", GitTreeState:"clean", GoVersion:"go1.21.7"}
+
+
