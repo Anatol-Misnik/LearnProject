@@ -49,4 +49,17 @@ $ docker run hello-world
 # alias kubectl="minikube kubectl --"
 # minikube dashboard
 # minikube addons enable metrics-server
+# minikube start --vm-driver=docker
+
+[a.misnik@testing-env-1 ~]$ kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   66m   v1.28.3
+
+[a.misnik@testing-env-1 ~]$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
 
