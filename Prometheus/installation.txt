@@ -88,4 +88,5 @@ Hang tight while we grab the latest from your chart repositories...
 Update Complete. ⎈Happy Helming!⎈
 
 
-
+Grafana/
+https://www.youtube.com/watch?v=-aW7-eOnWC8
