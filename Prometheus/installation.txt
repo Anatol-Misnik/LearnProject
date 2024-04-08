@@ -1,5 +1,14 @@
-install/
+$ sudo yum update
+
+Create .env:
+ADMIN_USER=admin  
+ADMIN_PASSWORD=admin
+
+installation/
 https://github.com/Einsteinish/Docker-Compose-Prometheus-and-Grafana?tab=readme-ov-file
+# git clone https://github.com/Einsteinish/Docker-Compose-Prometheus-and-Grafana.git
+# cd Docker-Compose-Prometheus-and-Grafana
+# docker-compose up -d
 
 SELinux/
 # sestatus
