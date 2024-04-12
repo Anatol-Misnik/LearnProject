@@ -1,3 +1,5 @@
+https://dev.to/project42/oracle-database-monitoring-using-grafana-d3b#Environment-configuration
+
 $ sudo yum update
 
 installation/
@@ -90,4 +92,5 @@ Update Complete. ⎈Happy Helming!⎈
 
 Grafana/
 https://www.youtube.com/watch?v=-aW7-eOnWC8
+https://www.youtube.com/watch?v=FbOKW18ZXDQ
 https://www.youtube.com/watch?v=FbOKW18ZXDQ
