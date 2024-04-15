@@ -1,0 +1,2 @@
+# docker compose logs -f --tail 100
+caller=collector.go:316 level=error scrapeMetricContext=activity ScrapeDuration=321.013155ms msg="ORA-00942  : table or view does not exist\n"
