@@ -1,2 +1,5 @@
 # docker compose logs -f --tail 100
+oracledb_exporter  | ts=2024-04-15T16:05:27.440Z caller=collector.go:351 level=error unabletogetfilehash="open /etc/oracledb_exporter/default-metrics.toml: no such file or directory"
+
 caller=collector.go:316 level=error scrapeMetricContext=activity ScrapeDuration=321.013155ms msg="ORA-00942  : table or view does not exist\n"
+https://stackoverflow.com/questions/16129912/sql-error-ora-00942-table-or-view-does-not-exist
