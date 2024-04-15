@@ -1,5 +1,23 @@
 # docker compose logs -f --tail 100
-oracledb_exporter  | ts=2024-04-15T16:05:27.440Z caller=collector.go:351 level=error unabletogetfilehash="open /etc/oracledb_exporter/default-metrics.toml: no such file or directory"
+oracledb_exporter  | ts=2024-04-15T16:05:37.439Z caller=collector.go:351 level=error unabletogetfilehash="open /etc/oracledb_exporter/default-metrics.toml: no such file or directory"
+oracledb_exporter  | ts=2024-04-15T16:05:37.632Z caller=collector.go:316 level=error scrapeMetricContext=activity ScrapeDuration=192.505945ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:05:37.633Z caller=collector.go:316 level=error scrapeMetricContext=wait_time ScrapeDuration=193.067976ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:05:37.737Z caller=collector.go:316 level=error scrapeMetricContext=resource ScrapeDuration=297.019897ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:05:37.738Z caller=collector.go:316 level=error scrapeMetricContext=asm_diskgroup ScrapeDuration=298.921899ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:05:37.845Z caller=collector.go:316 level=error scrapeMetricContext=tablespace ScrapeDuration=405.423723ms msg="ORA-00942: table or view does not exist\n"
 
 caller=collector.go:316 level=error scrapeMetricContext=activity ScrapeDuration=321.013155ms msg="ORA-00942  : table or view does not exist\n"
 https://stackoverflow.com/questions/16129912/sql-error-ora-00942-table-or-view-does-not-exist
+
+    environment:
+      - 'NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1'
+      - 'DATA_SOURCE_NAME=${DATA_SOURCE_DB1}'
+   #  - 'CUSTOM_METRICS=/etc/oracledb_exporter/default-metrics.toml'
+      - 'CUSTOM_METRICS=/default-metrics.toml'
+
+oracledb_exporter  | ts=2024-04-15T16:22:03.433Z caller=collector.go:316 level=error scrapeMetricContext=activity ScrapeDuration=336.234505ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:22:03.433Z caller=collector.go:316 level=error scrapeMetricContext=resource ScrapeDuration=336.576629ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:22:03.434Z caller=collector.go:316 level=error scrapeMetricContext=wait_time ScrapeDuration=336.554401ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:22:03.436Z caller=collector.go:316 level=error scrapeMetricContext=resource ScrapeDuration=338.723459ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:22:03.436Z caller=collector.go:316 level=error scrapeMetricContext=wait_time ScrapeDuration=338.842922ms msg="ORA-00942: table or view does not exist\n"
+oracledb_exporter  | ts=2024-04-15T16:22:03.436Z caller=collector.go:316 level=error scrapeMetricContext=tablespace ScrapeDuration=339.699365ms msg="ORA-00942: table or view does not exist\n"
