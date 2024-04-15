@@ -1,0 +1,1 @@
+# docker exec -ti -u 0 oracledb_exporter /bin/bash 
