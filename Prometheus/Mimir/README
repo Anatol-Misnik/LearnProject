@@ -1,4 +1,5 @@
 https://github.com/grafana/mimir
+https://www.youtube.com/watch?v=p8tNcUIQzZU
 
 docker run -d --name mimir -p 9009:9009 -v /path/to/config:/etc/mimir/config grafana/mimir:latest -config.file=/etc/mimir/config/config.yml
 
