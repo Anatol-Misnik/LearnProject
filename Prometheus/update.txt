@@ -31,10 +31,71 @@ grafana/grafana                     11.1.0    c42c21cd0ebc   4 weeks ago    453M
 grafana/grafana                     10.4.2    679e4be9f918   3 months ago   429MB
 
 $ docker pull prom/pushgateway:v1.9.0
+$ docker pull prom/node-exporter:v1.8.2
 
-Docker-Compose-Prometheus-and-Grafana]$ vim .env
+Ecs yy p
+
+Docker-Compose-Prometheus-and-Grafana]$ sudo vim .env
 PROMETHEUS_VERSION=v2.53.1
 GRAFANA_VERSION=11.1.0
+NODEEXP_VERSION=v1.8.2
+PUSHGATEWAY_VERSION=v1.9.0
+:wq
+
+Docker-Compose-Prometheus-and-Grafana]$ docker compose down
+[+] Running 9/9
+ ✔ Container caddy                                            Removed                                                                                          0.4s
+ ✔ Container oracledb_exporter                                Removed                                                                                          0.4s
+ ✔ Container pushgateway                                      Removed                                                                                          0.3s
+ ✔ Container cadvisor                                         Removed                                                                                          0.4s
+ ✔ Container grafana                                          Removed                                                                                          0.3s
+ ✔ Container alertmanager                                     Removed                                                                                          0.3s
+ ✔ Container nodeexporter                                     Removed                                                                                          0.3s
+ ✔ Container prometheus                                       Removed                                                                                          0.3s
+ ✔ Network docker-compose-prometheus-and-grafana_monitor-net  Removed                                                                                          0.1s
+
+[a.misnik@testing-env-1 Docker-Compose-Prometheus-and-Grafana]$ docker compose up -d
+[+] Running 1/1
+ ✘ nodeexporter Error manifest for prom/node-exporter:v1.9.0 not found: manifest unknown: manifest unknown                                                     1.2s
+Error response from daemon: manifest for prom/node-exporter:v1.9.0 not found: manifest unknown: manifest unknown
+
+[a.misnik@testing-env-1 Docker-Compose-Prometheus-and-Grafana]$ docker compose up -d nodeexporter
+[+] Running 2/2
+ ✔ Network docker-compose-prometheus-and-grafana_monitor-net  Created                                                                                          0.1s
+ ✔ Container nodeexporter                                     Started   
+
+docker compose logs
+docker compose stats
+
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+ab3bcb4a08d2   oracledb_exporter   0.00%     17.29MiB / 7.486GiB   0.23%     1.11MB / 974kB    7.9MB / 0B        8
+90598f6325be   prometheus          0.00%     140.4MiB / 7.486GiB   1.83%     3.61MB / 3MB      20.4MB / 15.4kB   9
+8da30cd81066   pushgateway         0.00%     15.2MiB / 7.486GiB    0.20%     7.49kB / 24kB     0B / 0B           9
+38b14d48c4d3   grafana             0.02%     69.82MiB / 7.486GiB   0.91%     311kB / 14.5MB    254kB / 3.44MB    11
+ced1bc7abfb2   caddy               0.02%     5.688MiB / 7.486GiB   0.07%     17.5MB / 17.4MB   0B / 0B           10
+1579995fc2ba   alertmanager        0.04%     17.09MiB / 7.486GiB   0.22%     9.55kB / 4.04kB   0B / 0B           8
+9a18a956f6f3   cadvisor            1.49%     79.32MiB / 512MiB     15.49%    59.8kB / 3.04MB   0B / 0B           12
+b92958b119aa   nodeexporter        0.00%     12.79MiB / 7.486GiB   0.17%     19.5kB / 412kB    0B / 0B           5
+
+
+[a.misnik@testing-env-1 Docker-Compose-Prometheus-and-Grafana]$ docker compose ps
+NAME                IMAGE                                     COMMAND                  SERVICE             CREATED         STATUS                   PORTS
+alertmanager        prom/alertmanager:v0.27.0                 "/bin/alertmanager -…"   alertmanager        2 minutes ago   Up 2 minutes             9093/tcp
+caddy               stefanprodan/caddy                        "/sbin/tini -- caddy…"   caddy               2 minutes ago   Up 2 minutes             0.0.0.0:3000->3000/tcp, :::3000->3000/tcp, 0.0.0.0:9090-9091->9090-9091/tcp, :::9090-9091->9090-9091/tcp, 0.0.0.0:9093->9093/tcp, :::9093->9093/tcp
+cadvisor            gcr.io/cadvisor/cadvisor:v0.49.1          "/usr/bin/cadvisor -…"   cadvisor            2 minutes ago   Up 2 minutes (healthy)   8080/tcp
+grafana             grafana/grafana:11.1.0                    "/run.sh"                grafana             2 minutes ago   Up 2 minutes             3000/tcp
+nodeexporter        prom/node-exporter:v1.8.2                 "/bin/node_exporter …"   nodeexporter        4 minutes ago   Up 4 minutes             9100/tcp
+oracledb_exporter   ghcr.io/iamseth/oracledb_exporter:0.6.0   "/oracledb_exporter"     oracledb_exporter   2 minutes ago   Up 2 minutes             0.0.0.0:9161->9161/tcp, :::9161->9161/tcp
+prometheus          prom/prometheus:v2.53.1                   "/bin/prometheus --c…"   prometheus          2 minutes ago   Up 2 minutes             9090/tcp
+pushgateway         prom/pushgateway:v1.9.0                   "/bin/pushgateway"       pushgateway         2 minutes ago   Up 2 minutes             9091/tcp
+
+
+
+
+
+
+
+
 
 
 
