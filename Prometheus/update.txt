@@ -13,4 +13,12 @@ prometheus          prom/prometheus:v2.52.0                   "/bin/prometheus -
 pushgateway         prom/pushgateway:latest                   "/bin/pushgateway"       pushgateway         2 months ago   Up 14 minutes             9091/tcp
 
 
+docker pull gcr.io/cadvisor/cadvisor:v0.49.1
+(https://console.cloud.google.com/gcr/images/cadvisor/GLOBAL/cadvisor)
+
 docker pull ghcr.io/iamseth/oracledb_exporter:0.6.0
+
+
+
+
+Docker-Compose-Prometheus-and-Grafana]$ less docker-compose.yml
