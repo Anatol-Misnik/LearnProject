@@ -12,6 +12,12 @@ oracledb_exporter   ghcr.io/iamseth/oracledb_exporter:0.6.0   "/oracledb_exporte
 prometheus          prom/prometheus:v2.52.0                   "/bin/prometheus --c…"   prometheus          2 months ago   Up 14 minutes             9090/tcp
 pushgateway         prom/pushgateway:latest                   "/bin/pushgateway"       pushgateway         2 months ago   Up 14 minutes             9091/tcp
 
+$ docker images | grep oracle
+ghcr.io/iamseth/oracledb_exporter   0.6.0     c50289508a2f   5 weeks ago    102MB
+ghcr.io/iamseth/oracledb_exporter   <none>    0b9a6eb3f98b   2 months ago   102MB
+ghcr.io/iamseth/oracledb_exporter   latest    75b798fdff93   3 months ago   104MB
+ghcr.io/iamseth/oracledb_exporter   0.5.2     7c8da0da59f5   3 months ago   95.3MB
+
 
 docker pull gcr.io/cadvisor/cadvisor:v0.49.1
 (https://console.cloud.google.com/gcr/images/cadvisor/GLOBAL/cadvisor)
