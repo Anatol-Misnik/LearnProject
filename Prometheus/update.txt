@@ -1,0 +1,16 @@
+sudo yum upgrade
+sudo yum update
+
+docker compose ps
+NAME                IMAGE                                     COMMAND                  SERVICE             CREATED        STATUS                    PORTS
+alertmanager        prom/alertmanager:v0.27.0                 "/bin/alertmanager -…"   alertmanager        2 months ago   Up 14 minutes             9093/tcp
+caddy               stefanprodan/caddy                        "/sbin/tini -- caddy…"   caddy               2 months ago   Up 14 minutes             0.0.0.0:3000->3000/tcp, :::3000->3000/tcp, 0.0.0.0:9090-9091->9090-9091/tcp, :::9090-9091->9090-9091/tcp, 0.0.0.0:9093->9093/tcp, :::9093->9093/tcp
+cadvisor            gcr.io/cadvisor/cadvisor:v0.49.1          "/usr/bin/cadvisor -…"   cadvisor            2 months ago   Up 14 minutes (healthy)   8080/tcp
+grafana             grafana/grafana:10.4.2                    "/run.sh"                grafana             2 months ago   Up 14 minutes             3000/tcp
+nodeexporter        prom/node-exporter:v1.8.0                 "/bin/node_exporter …"   nodeexporter        2 months ago   Up 14 minutes             9100/tcp
+oracledb_exporter   ghcr.io/iamseth/oracledb_exporter:0.6.0   "/oracledb_exporter"     oracledb_exporter   2 months ago   Up 14 minutes             0.0.0.0:9161->9161/tcp, :::9161->9161/tcp
+prometheus          prom/prometheus:v2.52.0                   "/bin/prometheus --c…"   prometheus          2 months ago   Up 14 minutes             9090/tcp
+pushgateway         prom/pushgateway:latest                   "/bin/pushgateway"       pushgateway         2 months ago   Up 14 minutes             9091/tcp
+
+
+docker pull ghcr.io/iamseth/oracledb_exporter:0.6.0
