@@ -33,7 +33,12 @@ grafana/grafana                     10.4.2    679e4be9f918   3 months ago   429M
 $ docker pull prom/pushgateway:v1.9.0
 $ docker pull prom/node-exporter:v1.8.2
 
-Ecs yy p
+Ecs 
+gg - вверх файла
+yy - копировать текущую строку
+yG - скопировать текст от текущей позиции вниз
+dG - удалить текст от текущей позиции вниз
+p - вставить ниже
 
 Docker-Compose-Prometheus-and-Grafana]$ sudo vim .env
 PROMETHEUS_VERSION=v2.53.1
@@ -90,12 +95,8 @@ prometheus          prom/prometheus:v2.53.1                   "/bin/prometheus -
 pushgateway         prom/pushgateway:v1.9.0                   "/bin/pushgateway"       pushgateway         2 minutes ago   Up 2 minutes             9091/tcp
 
 
-
-
-
-
-
-
-
-
-
+$ sudo yum upgrade
+Last metadata expiration check: 2:48:54 ago on Tue 23 Jul 2024 10:43:48 AM CEST.
+Dependencies resolved.
+Nothing to do.
+Complete!
