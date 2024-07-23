@@ -12,19 +12,29 @@ oracledb_exporter   ghcr.io/iamseth/oracledb_exporter:0.6.0   "/oracledb_exporte
 prometheus          prom/prometheus:v2.52.0                   "/bin/prometheus --c…"   prometheus          2 months ago   Up 14 minutes             9090/tcp
 pushgateway         prom/pushgateway:latest                   "/bin/pushgateway"       pushgateway         2 months ago   Up 14 minutes             9091/tcp
 
+docker pull ghcr.io/iamseth/oracledb_exporter:0.6.0
+
 $ docker images | grep oracle
 ghcr.io/iamseth/oracledb_exporter   0.6.0     c50289508a2f   5 weeks ago    102MB
 ghcr.io/iamseth/oracledb_exporter   <none>    0b9a6eb3f98b   2 months ago   102MB
 ghcr.io/iamseth/oracledb_exporter   latest    75b798fdff93   3 months ago   104MB
 ghcr.io/iamseth/oracledb_exporter   0.5.2     7c8da0da59f5   3 months ago   95.3MB
 
+docker pull prom/prometheus:v2.53.1
 
 docker pull gcr.io/cadvisor/cadvisor:v0.49.1
 (https://console.cloud.google.com/gcr/images/cadvisor/GLOBAL/cadvisor)
 
-docker pull ghcr.io/iamseth/oracledb_exporter:0.6.0
+$ docker pull grafana/grafana:11.1.0
+$ docker images | grep grafa
+grafana/grafana                     11.1.0    c42c21cd0ebc   4 weeks ago    453MB
+grafana/grafana                     10.4.2    679e4be9f918   3 months ago   429MB
+
+$ docker pull prom/pushgateway:v1.9.0
+
+Docker-Compose-Prometheus-and-Grafana]$ vim .env
+PROMETHEUS_VERSION=v2.53.1
+GRAFANA_VERSION=11.1.0
 
 
 
-
-Docker-Compose-Prometheus-and-Grafana]$ less docker-compose.yml
