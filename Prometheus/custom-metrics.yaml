@@ -1,0 +1,20 @@
+metrics:
+- context: "select_for_test"
+  labels: [ "attempts", "submitted" ]
+  metricsdesc:
+    attempts: "Perhaps this is Attempts."
+    submitted: "Perhaps this is Submitted."
+  request: "SELECT
+        sum(a.count_total) as attempts,
+        sum(a.count_ok) as submitted
+        FROM invoice.sms_cube_min a
+        LEFT JOIN invoice.sms_poi poi ON a.src_poi_id = poi.poi_id
+        WHERE group_id = 5
+        AND a.called_mcc_mnc = 424002
+        AND poi.poi_channel_id = 2124
+        AND a.dcheck >= sysdate - 6/1440
+        AND a.dcheck < sysdate - 5/1440
+        GROUP BY a.called_mcc_mnc"
+#  metricstype:
+#    Attempts: "counter"
+#    Submitted: "counter"
